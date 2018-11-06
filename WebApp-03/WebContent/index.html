@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Input Birth Year</title>
+<style>
+div.a {
+	text-align: center;
+	buttonSubmit input, div.buttonSubmit span {
+
+     margin-left: 500px;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript">
+         function validate()
+         {
+        	 var inputYear;  
+        	 inputYear = document.birthyear.year.value;
+        	    // If inputYear is Not a Number 
+        	    if (isNaN(inputYear) || inputYear == 0) {       	    
+        	            alert( "Not a valid input ---- " +inputYear );
+        	            return false;
+               	    } else {
+               	    	return true;
+        	    } 
+         }
+         
+         function isWhole() {
+        	 var inputYear;
+        	 inputYear = document.birthyear.year.value;
+        	 if(/^\d+$/.test(inputYear)){
+        		 return true;
+        	 }else{
+        		 alert( "Not a valid input ---- " +inputYear );
+ 	            return false;
+        	 }
+        	}
+      </script>
+</head>
+
+<body bgcolor="#f0f0f0">
+	<div class="a">
+		<form action="MyServlet" name="birthyear" method="POST"
+			onsubmit="return(validate() && isWhole());">
+			<label for="Birth Year"><b>Enter Birth Year:</b></label> <input
+				type="text" placeholder="Enter Birth Year " name="year" maxlength="4"
+				required> <br>
+			<br> <input type="submit" value="Submit" />
+		</form>
+	</div>
+</body>
+</html>
+
+
+
